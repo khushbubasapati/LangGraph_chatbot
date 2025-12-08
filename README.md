@@ -104,11 +104,11 @@ streamlit run app.py
 
 ---
 
-🚀 Deployment on Hugging Face Spaces
+### 🚀 Deployment on Hugging Face Spaces
 
-This chatbot is deployed on Hugging Face Spaces using Streamlit for an interactive web-based experience.
+* This chatbot is deployed on Hugging Face Spaces using Streamlit for an interactive web-based experience.
 
-🔗 Live Demo: https://huggingface.co/spaces/khushbu-basapati/langgraph_chatbot
+* 🔗 Live Demo: https://huggingface.co/spaces/khushbu-basapati/langgraph_chatbot
 
 
 
