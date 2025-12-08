@@ -2,11 +2,11 @@ langchain
 langchain-core
 langchain-community
 langchain-huggingface
+langchain-groq
 langgraph
 python-dotenv
 streamlit
 langgraph-checkpoint-sqlite
 langsmith
-langchain-google-genai
-google-generativeai
+
 

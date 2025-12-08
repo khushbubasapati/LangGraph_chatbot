@@ -5,8 +5,7 @@ import uuid
 
 # ********************** Utility Functions ******************************
 def generate_thread_id():
-    thread_id = uuid.uuid4()
-    return thread_id
+    return str(uuid.uuid4())
 
 def reset_chat():
     thread_id = generate_thread_id()
@@ -15,6 +14,13 @@ def reset_chat():
     st.session_state["message_history"] = []
     
 def add_thread(thread_id):
+     # Ensure chat_thread is always a list
+    if st.session_state.get("chat_thread") is None:
+        st.session_state["chat_thread"] = []
+
+    # Normalize to string
+    thread_id = str(thread_id)
+
     if thread_id not in st.session_state["chat_thread"]:
         st.session_state["chat_thread"].append(thread_id)
         
@@ -32,7 +38,8 @@ if "thread_id" not in st.session_state:
     st.session_state["thread_id"] = generate_thread_id()
     
 if "chat_thread" not in st.session_state:
-    st.session_state["chat_thread"] = retreive_all_threads()
+    threads = retreive_all_threads()
+    st.session_state["chat_thread"] = threads if threads else []
     
 add_thread(st.session_state["thread_id"])
     

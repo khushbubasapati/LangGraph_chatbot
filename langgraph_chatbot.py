@@ -5,6 +5,7 @@ from langchain_core.tools import tool
 from langchain_community.tools import DuckDuckGoSearchRun
 from typing import TypedDict,Annotated,Literal
 from langchain_huggingface import ChatHuggingFace,HuggingFaceEndpoint
+from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage,BaseMessage
 from langgraph.checkpoint.sqlite import SqliteSaver
@@ -15,8 +16,7 @@ import os
 
 # model
 load_dotenv()
-llm = HuggingFaceEndpoint(repo_id = "openai/gpt-oss-120b")
-model = ChatHuggingFace(llm = llm)
+model = ChatGroq(model="openai/gpt-oss-120b")
 
 # Tools
 search_tool = DuckDuckGoSearchRun(region="us-en")
@@ -74,7 +74,7 @@ tool_node = ToolNode(tools)
 
 #os.makedirs("memory", exist_ok=True)
 #db_path = os.path.join("memory", "chatbot_db.sqlite")
-conn = sqlite3.connect(database="chatbot_db",check_same_thread=False)
+conn = sqlite3.connect(database="chatbot.db",check_same_thread=False)
 # CHECKPOINTER
 checkpointer = SqliteSaver(conn=conn)
 
