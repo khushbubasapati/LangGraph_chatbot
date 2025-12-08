@@ -1,6 +1,6 @@
 # Chatbot Application using LangGraph, LangChain, LangSmith & Hugging Face
 
-A production-ready chatbot built using **LangGraph**, **LangChain**, **LangSmith**, **Hugging Face models**, and a **Streamlit UI**. The system supports **tool use**, including a custom **RAG tool**, real-time **streaming responses**, and persistent memory using **SQLiteSaver**.
+A production-ready chatbot built using **LangGraph**, **LangChain**, **LangSmith**, **Hugging Face models**, and a **Streamlit UI**. The system supports **tool use**, real-time **streaming responses**, and persistent memory using **SQLiteSaver**.
 
 ---
 
@@ -21,16 +21,16 @@ A production-ready chatbot built using **LangGraph**, **LangChain**, **LangSmith
 * Pluggable architecture to use various HF text-generation models.
 * Works with both local and API-based models.
 
-### 🔹 RAG (Retrieval-Augmented Generation)
+### 🔹 Deployment on Hugging Face Spaces
 
-* Document ingestion and embedding generation.
-* Retrieval using vector database for context-aware responses.
+* Deployed on Hugging Face Spaces with Streamlit UI.
+* Accessible publicly with full streaming and tool support.
+* Ideal for demonstrations and real-time interaction.
 
 ### 🔹 Tools Implementation
 
 Includes a variety of tools:
 
-* RAG tool for knowledge retrieval
 * Search tool (DuckDuckGoSearch)
 * Calculator tool
 * get_stock_price tool
@@ -56,9 +56,8 @@ Includes a variety of tools:
 
 ```
 ├── app.py                  # Streamlit frontend
-├── langgraph_chatbot.py       # LangGraph workflow
-├── memory/                 # SQLiteSaver setup
-├── data/                   # Documents for RAG
+├── langgraph_chatbot.py    # LangGraph workflow
+├── chatbot.db              # SQLiteSaver database
 └── README.md               # Project documentation
 ```
 
@@ -97,25 +96,19 @@ streamlit run app.py
 
 ---
 
-## 📚 RAG Pipeline
-
-1. Load documents
-2. Generate embeddings
-3. Store in vector DB
-4. Retrieve top-k docs
-5. Inject into LLM context
-
----
-
 ## 🛠️ Tools Implemented
 
-* **RAGTool** – retrieves context
 * **Search or API tools (optional)**
 * **Math/Utility tools**
 * **Any custom workflow-specific tools**
 
 ---
 
+🚀 Deployment on Hugging Face Spaces
+
+This chatbot is deployed on Hugging Face Spaces using Streamlit for an interactive web-based experience.
+
+🔗 Live Demo: https://huggingface.co/spaces/khushbu-basapati/langgraph_chatbot
 
 
 
